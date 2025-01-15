@@ -8,7 +8,7 @@ const port = 3010
 app.use(express.json());
 
 mongoose
-  .connect("mongodb+srv://issac:Nemizez038@cluster0.zvt6a.mongodb.net/MenuItems")
+  .connect(process.env.MONGO_URI)
   .then(() => console.log("Connected to MongoDB Atlas"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
